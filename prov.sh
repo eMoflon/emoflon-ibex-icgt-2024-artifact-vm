@@ -48,17 +48,17 @@ fi
 unzip -qq -o $ECLIPSE_ARCHIVE.zip
 rm -f $ECLIPSE_ARCHIVE.zip
 
-# Install eMoflon::IBeX from custom updatesite to included Eclipse (VM)
-cd /home/vagrant
-unzip updatesite-emoflon.zip -d /home/vagrant/updatesite-emoflon
-cd /home/vagrant/eclipse-apps/eclipse
-./eclipse -noSplash -consoleLog -application org.eclipse.equinox.p2.director -repository file:///home/vagrant/updatesite-emoflon/ -installIU org.emoflon.ibex.ide.hipe.feature.feature.group,org.emoflon.ibex.ide.feature.feature.group,org.moflon.core.feature.feature.group
-
 # Install HiPE from custom updatesite to included Eclipse (VM)
 cd /home/vagrant
 unzip updatesite-hipe.zip -d /home/vagrant/updatesite-hipe
 cd /home/vagrant/eclipse-apps/eclipse
 ./eclipse -noSplash -consoleLog -application org.eclipse.equinox.p2.director -repository file:///home/vagrant/updatesite-hipe/ -installIU hipe.feature.feature.group
+
+# Install eMoflon::IBeX from custom updatesite to included Eclipse (VM)
+cd /home/vagrant
+unzip updatesite-emoflon.zip -d /home/vagrant/updatesite-emoflon
+cd /home/vagrant/eclipse-apps/eclipse
+./eclipse -noSplash -consoleLog -application org.eclipse.equinox.p2.director -repository file:///home/vagrant/updatesite-emoflon/ -installIU org.emoflon.ibex.ide.hipe.feature.feature.group,org.emoflon.ibex.ide.feature.feature.group,org.moflon.core.feature.feature.group
 
 # Updatesite clean up
 cd /home/vagrant
