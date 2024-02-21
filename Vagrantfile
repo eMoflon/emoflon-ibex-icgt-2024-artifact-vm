@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "emoflon"
     config.vm.define 'emoflon'
     config.vm.provider :virtualbox do |vb|
-        vb.name = "emoflon"
+        vb.name = "emoflon-icgt"
         vb.memory = 8192
         vb.cpus = 2
     end
