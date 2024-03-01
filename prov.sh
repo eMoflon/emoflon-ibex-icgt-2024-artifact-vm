@@ -50,6 +50,7 @@ rm -f $ECLIPSE_ARCHIVE.zip
 
 # Overwrite the pre-existing emoflon.properties since this script will build
 # an user variant of the Eclipse product manually
+cd /home/vagrant
 cp -rf emoflon_user.properties /home/vagrant/eclipse-apps/eclipse/emoflon.properties
 rm -f emoflon_user.properties
 
