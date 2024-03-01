@@ -64,17 +64,17 @@ cd /home/vagrant/eclipse-apps/eclipse
 cd /home/vagrant
 rm -rf /home/vagrant/updatesite-emoflon /home/vagrant/updatesite-emoflon.zip
 rm -rf /home/vagrant/updatesite-hipe /home/vagrant/updatesite-hipe.zip
+rm -rf /home/vagrant/updatesite-hipe
+rm -rf /home/vagrant/updatesite-emoflon
 
 # Get example projects from ZIP
 cd /home/vagrant
 mkdir -p /home/vagrant/emoflon-projects
-#unzip workspace.zip -d /home/vagrant/emoflon-projects
-#rm -f workspace.zip
-# TODO
+unzip workspace.zip -d /home/vagrant/emoflon-projects
+rm -f workspace.zip
 
 # Import example projects into default workspace
-#cd /home/vagrant/eclipse-apps/eclipse
-#./eclipse -noSplash -consoleLog -data /home/vagrant/eclipse-workspace -application com.seeq.eclipse.importprojects.headlessimport -importProject /home/vagrant/emoflon-projects/
-# TODO
+cd /home/vagrant/eclipse-apps/eclipse
+./eclipse -noSplash -consoleLog -data /home/vagrant/eclipse-workspace -application com.seeq.eclipse.importprojects.headlessimport -importProject /home/vagrant/emoflon-projects/
 
 log "Finished provisioning."

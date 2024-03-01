@@ -10,13 +10,12 @@ Vagrant.configure("2") do |config|
     # Copy eMoflon::IBeX-specific files
     config.vm.provision "file", source: "./resources/updatesite-emoflon.zip", destination: "updatesite-emoflon.zip"
     config.vm.provision "file", source: "./resources/updatesite-hipe.zip", destination: "updatesite-hipe.zip"
-    # config.vm.provision "file", source: "./resources/workspace.zip", destination: "workspace.zip"
-    # config.vm.provision "file", source: "./resources/content-onto-desktop/ArtifactEvaluation.pdf", destination: "Desktop/ArtifactEvaluation.pdf"
-    # config.vm.provision "shell", inline: "mkdir -p /home/vagrant/Desktop/paper-eval-results && chown -R vagrant:vagrant /home/vagrant/Desktop/paper-eval-results"
-    # config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/Benchmark_HO-SC-Horizontal.txt", destination: "Desktop/paper-eval-results/Benchmark_HO-SC-Horizontal.txt"
-    # config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/Benchmark_HO-SC-Vertical.txt", destination: "Desktop/paper-eval-results/Benchmark_HO-SC-Vertical.txt"
-    # config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/Benchmark_HO-SC-VerticalMultiChange.txt", destination: "Desktop/paper-eval-results/Benchmark_HO-SC-VerticalMultiChange.txt"
-    # TODO
+    config.vm.provision "file", source: "./resources/workspace.zip", destination: "workspace.zip"
+    config.vm.provision "file", source: "./resources/content-onto-desktop/ICGT24-ArtifactEvaluation.pdf", destination: "Desktop/ICGT24-ArtifactEvaluation.pdf"
+    config.vm.provision "file", source: "./resources/content-onto-desktop/README_FIRST.txt", destination: "Desktop/README_FIRST.txt"
+    config.vm.provision "shell", inline: "mkdir -p /home/vagrant/Desktop/paper-eval-results && chown -R vagrant:vagrant /home/vagrant/Desktop/paper-eval-results"
+    config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/performance.txt", destination: "Desktop/paper-eval-results/performance.txt"
+    config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/repairs.txt", destination: "Desktop/paper-eval-results/repairs.txt"
 
     # Provisioning script
     config.vm.provision "shell", path: "prov.sh", privileged: false
