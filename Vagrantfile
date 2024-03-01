@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", inline: "mkdir -p /home/vagrant/Desktop/paper-eval-results && chown -R vagrant:vagrant /home/vagrant/Desktop/paper-eval-results"
     config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/performance.txt", destination: "Desktop/paper-eval-results/performance.txt"
     config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/repairs.txt", destination: "Desktop/paper-eval-results/repairs.txt"
+    config.vm.provision "file", source: "./resources/emoflon_user.properties", destination: "emoflon_user.properties"
 
     # Provisioning script
     config.vm.provision "shell", path: "prov.sh", privileged: false

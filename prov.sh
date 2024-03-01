@@ -48,6 +48,11 @@ fi
 unzip -qq -o $ECLIPSE_ARCHIVE.zip
 rm -f $ECLIPSE_ARCHIVE.zip
 
+# Overwrite the pre-existing emoflon.properties since this script will build
+# an user variant of the Eclipse product manually
+cp -rf emoflon_user.properties /home/vagrant/eclipse-apps/eclipse/emoflon.properties
+rm -f emoflon_user.properties
+
 # Install HiPE from custom updatesite to included Eclipse (VM)
 cd /home/vagrant
 unzip updatesite-hipe.zip -d /home/vagrant/updatesite-hipe
